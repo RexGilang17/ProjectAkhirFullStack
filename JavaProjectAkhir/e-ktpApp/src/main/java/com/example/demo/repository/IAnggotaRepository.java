@@ -10,6 +10,6 @@ public interface IAnggotaRepository {
 	public List<AddAnggota> getAllAddAnggota();
 	public AddAnggota updateAddAnggota(int id, AddAnggota addanggota);
 	public AddAnggota deleteAddAnggota(int id);
-	public AddAnggota getStudent(int id);
-//	public AddAnggota getAnggota(int id);
+//	public AddAnggota getStudent(int id);
+	public AddAnggota getAnggota(int id);
 }

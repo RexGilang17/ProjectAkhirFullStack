@@ -57,17 +57,17 @@ public class AnggotaRepository implements IAnggotaRepository{
 		return result;
 	}
 
-	@Override
-	public AddAnggota getStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 //	@Override
-//	public AddAnggota getAnggota(int id) {
+//	public AddAnggota getStudent(int id) {
 //		// TODO Auto-generated method stub
-//		String query = "SELECT * FROM tb_anggota_keluarga WHERE id = ?";
-//		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddAnggota.class), id);
+//		return null;
 //	}
+
+	@Override
+	public AddAnggota getAnggota(int id) {
+		// TODO Auto-generated method stub
+		String query = "SELECT * FROM tb_anggota_keluarga WHERE id = ?";
+		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddAnggota.class), id);
+	}
 
 }

@@ -16,35 +16,34 @@ public class AnggotaService  implements IAnggotaService {
 	IAnggotaRepository anggotaRepository;
 
 	@Override
-	public AddAnggota insertAddAnggota(AddAnggota addanggota) {
+	public AddAnggota insertAddAnggota(AddAnggota AddAnggota) {
 		// TODO Auto-generated method stub
-		return addanggotaRepository.insertAddAnggota(addanggota);
+		return anggotaRepository.insertAddAnggota(AddAnggota);
 	}
 
 	@Override
 	public List<AddAnggota> getAllAddAnggota() {
 		// TODO Auto-generated method stub
-		return addanggotaRepository.getAllAddAnggota();
+		return anggotaRepository.getAllAddAnggota();
 	}
 
 	@Override
-	public AddAnggota updateAddAnggota(int id, AddAnggota addanggota) {
+	public AddAnggota updateAddAnggota(int id, AddAnggota AddAnggota) {
 		// TODO Auto-generated method stub
-		return addanggotaRepository.updateAddAnggota(id, addanggota);
+		return anggotaRepository.updateAddAnggota(id, AddAnggota);
 	}
 
 	@Override
 	public AddAnggota deleteAddAnggota(int id) {
 		// TODO Auto-generated method stub
-		return addanggotaRepository.deleteAddAnggota(id);
+		return anggotaRepository.deleteAddAnggota(id);
 	}
 
 //	@Override
 //	public AddAnggota getStudent(int id) {
 //		// TODO Auto-generated method stub
-//		return addanggotaRepository.getStudent(id);
+//		return anggotaRepository.getStudent(id);
 //	}
-
 
 	
 }

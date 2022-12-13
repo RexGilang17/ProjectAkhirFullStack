@@ -1,5 +1,4 @@
 package com.example.demo.controller;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,39 +12,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.AddAnggota;
-import com.example.demo.service.IAnggotaService;
+import com.example.demo.model.AddKk;
+import com.example.demo.service.IKkService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080")
-@RequestMapping("/api/anggota")
-public class AnggotaController {
+@RequestMapping("/api/kk")
+public class KkController {
+
 	@Autowired
-	IAnggotaService AddAnggotaService;
+	IKkService AddKkService;
 	
 	
 	@PostMapping("/insert")
-	public AddAnggota insertAddAnggota(@RequestBody AddAnggota AddAnggota){
-		return AddAnggotaService.insertAddAnggota(AddAnggota);
+	public AddKk insertAddKk(@RequestBody AddKk AddKk){
+		return AddKkService.insertAddKk(AddKk);
 	}
 	
 	@GetMapping("/getAll")
-	public List<AddAnggota> getAllAddAnggota(){
-		return AddAnggotaService.getAllAddAnggota();
+	public List<AddKk> getAllAddKk(){
+		return AddKkService.getAllAddKk();
 	}
 	
 	@PutMapping("/update/{id}")
-	public AddAnggota updateAddAnggota(@PathVariable int id, @RequestBody AddAnggota AddAnggota) {
-		return AddAnggotaService.updateAddAnggota(id, AddAnggota);
+	public AddKk updateAddKk(@PathVariable int id, @RequestBody AddKk AddKk) {
+		return AddKkService.updateAddKk(id, AddKk);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public AddAnggota deleteAddAnggota(@PathVariable int id) {
-		return AddAnggotaService.deleteAddAnggota(id);
+	public AddKk deleteAddKk(@PathVariable int id) {
+		return AddKkService.deleteAddKk(id);
 	}
 	
-//	@GetMapping("/student/{id}")
-//	public AddAnggota getAddAnggota(@PathVariable int id) {
-//		return AddAnggotaService.getStudent(id);
-//	}
+
 }
