@@ -64,9 +64,5 @@ public class KkRepository implements IKkRepository {
 		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddKk.class), id);
 	}
 	
-//	@Override
-//	public AddKk getStudent(int id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
 }

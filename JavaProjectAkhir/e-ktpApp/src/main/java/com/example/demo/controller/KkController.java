@@ -44,5 +44,10 @@ public class KkController {
 		return AddKkService.deleteAddKk(id);
 	}
 	
+	@GetMapping("/getkk/{id}")
+	public AddKk getAddKk(@PathVariable int id) {
+		return AddKkService.getKk(id);
+	}
+	
 
 }

@@ -44,8 +44,15 @@ public class AnggotaController {
 		return AddAnggotaService.deleteAddAnggota(id);
 	}
 	
-//	@GetMapping("/student/{id}")
-//	public AddAnggota getAddAnggota(@PathVariable int id) {
-//		return AddAnggotaService.getStudent(id);
-//	}
+	@GetMapping("/getanggota/{id}")
+	public AddAnggota getAddAnggota(@PathVariable int id) {
+		return AddAnggotaService.getAnggota(id);
+	}
+	
+	@GetMapping("/getallanggota/{id}")
+	public AddAnggota getAllAnggotaKeluarga(@PathVariable int id) {
+		return AddAnggotaService.getAnggota(id);
+	}
+	
+	
 }

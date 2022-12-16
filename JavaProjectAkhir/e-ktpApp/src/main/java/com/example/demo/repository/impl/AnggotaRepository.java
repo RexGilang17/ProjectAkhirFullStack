@@ -67,7 +67,15 @@ public class AnggotaRepository implements IAnggotaRepository{
 	public AddAnggota getAnggota(int id) {
 		// TODO Auto-generated method stub
 		String query = "SELECT * FROM tb_anggota_keluarga WHERE id = ?";
-		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddAnggota.class), id);
+		var result = jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddAnggota.class), id);
+		return result;
+	}
+
+	@Override
+	public List<AddAnggota> getAllAnggotaKeluarga(int id) {
+		// TODO Auto-generated method stub
+		String query = "SELECT * FROM tb_anggota_keluarga WHERE id = ?";
+		return jdbcTemplate.query(query, new BeanPropertyRowMapper<>(AddAnggota.class), id);
 	}
 
 }

@@ -11,5 +11,5 @@ public interface IKkService {
 	public List<AddKk> getAllAddKk();
 	public AddKk updateAddKk(int id, AddKk addkk);
 	public AddKk deleteAddKk(int id);
-//	public AddKk getStudent(int id);
+	public AddKk getKk(int id);
 }

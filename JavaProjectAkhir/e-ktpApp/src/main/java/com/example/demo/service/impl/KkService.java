@@ -39,6 +39,11 @@ public class KkService implements IKkService {
 		return kkRepository.deleteAddKk(id);
 	}
 
-
+	@Override
+	public AddKk getKk(int id) {
+		// TODO Auto-generated method stub
+		return kkRepository.getKk(id);
+	}
+	
 
 }
