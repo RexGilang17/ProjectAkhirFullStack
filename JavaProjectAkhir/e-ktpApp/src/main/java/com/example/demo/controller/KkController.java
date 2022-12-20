@@ -49,5 +49,10 @@ public class KkController {
 		return AddKkService.getKk(id);
 	}
 	
+	@GetMapping("/getAllKk/{id}")
+	public AddKk getAddAllKk(@PathVariable int id) {
+		return AddKkService.getKk(id);
+	}
+	
 
 }

@@ -2,6 +2,7 @@ package com.example.demo.repository.impl;
 
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,6 +17,14 @@ public class UserRepository implements IUserRepository {
 	JdbcTemplate jdbcTemplate;
 	
 	@Override
+	public AddUser login(String email,String password) {
+		// TODO Auto-generated method stub
+		String query = "SELECT * FROM tb_user WHERE email = ? AND password = ?";
+		var result = jdbcTemplate.queryForObject(query,new BeanPropertyRowMapper<>(AddUser.class), email,password);
+		return result;
+	}
+	
+	@Override
 	public AddUser insertAddUser(AddUser adduser) {
 		// TODO Auto-generated method stub
 		String query = "INSERT INTO tb_user(email, nama, password) "
@@ -24,41 +33,47 @@ public class UserRepository implements IUserRepository {
 		return adduser;
 	}
 
-	@Override
-	public List<AddUser> getAllAddUser() {
-		// TODO Auto-generated method stub
-		String query = "SELECT * FROM tb_user";
-		return jdbcTemplate.query(query, new BeanPropertyRowMapper<>(AddUser.class));
-	}
 
-	@Override
-	public AddUser updateAddUser(int id, AddUser adduser) {
-		// TODO Auto-generated method stub
-		String query = "UPDATE tb_user SET email = ?, nama = ?, password = ?";
-		
-		jdbcTemplate.update(query, new Object[] {adduser.getEmail(), adduser.getNama(), adduser.getPassword(), id});
-		
-		return adduser;
-	}
 
-	@Override
-	public AddUser deleteAddUser(int id) {
-		// TODO Auto-generated method stub
-		String query = "SELECT * FROM tb_user WHERE id = ?";
-		var result = jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddUser.class), id);
-		
-		query = "DELETE FROM tb_user WHERE id = ?";
-		jdbcTemplate.update(query, id);
-		
-		return result;
-	}
 
-	@Override
-	public AddUser getUser(int id) {
-		// TODO Auto-generated method stub
-		String query = "SELECT * FROM tb_user WHERE id = ?";
-		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddUser.class), id);
-	}
+	
+	
+
+//	@Override
+//	public List<AddUser> getAllAddUser() {
+//		// TODO Auto-generated method stub
+//		String query = "SELECT * FROM tb_user";
+//		return jdbcTemplate.query(query, new BeanPropertyRowMapper<>(AddUser.class));
+//	}
+//
+//	@Override
+//	public AddUser updateAddUser(int id, AddUser adduser) {
+//		// TODO Auto-generated method stub
+//		String query = "UPDATE tb_user SET email = ?, nama = ?, password = ?";
+//		
+//		jdbcTemplate.update(query, new Object[] {adduser.getEmail(), adduser.getNama(), adduser.getPassword(), id});
+//		
+//		return adduser;
+//	}
+//
+//	@Override
+//	public AddUser deleteAddUser(int id) {
+//		// TODO Auto-generated method stub
+//		String query = "SELECT * FROM tb_user WHERE id = ?";
+//		var result = jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddUser.class), id);
+//		
+//		query = "DELETE FROM tb_user WHERE id = ?";
+//		jdbcTemplate.update(query, id);
+//		
+//		return result;
+//	}
+//
+//	@Override
+//	public AddUser getUser(int id) {
+//		// TODO Auto-generated method stub
+//		String query = "SELECT * FROM tb_user WHERE id = ?";
+//		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddUser.class), id);
+//	}
 	
 //	@Override
 //	public AddKk getStudent(int id) {

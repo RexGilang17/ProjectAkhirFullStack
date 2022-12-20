@@ -25,15 +25,24 @@ public class UserController {
 	IUserService userService;
 	
 	
-	@PostMapping("/insert")
-	public AddUser insertAddUser(@RequestBody AddUser adduser){
+	@PostMapping("/login")
+	public AddUser login(@RequestBody AddUser adduser){
+		return userService.login(adduser.getEmail(),adduser.getPassword());
+	}
+	
+	@PostMapping("/register")
+	public AddUser user(@RequestBody AddUser adduser){
 		return userService.insertAddUser(adduser);
 	}
 	
-	@GetMapping("/getAll")
-	public List<AddUser> getAllAddKk(){
-		return userService.getAllAddUser();
-	}
+	
+	
+	
+	
+//	@GetMapping("/getAll")
+//	public List<AddUser> getAllAddKk(){
+//		return userService.getAllAddUser();
+//	}
 	
 //	@PutMapping("/update/{id}")
 //	public AddUser updateAddUser(@PathVariable int id, @RequestBody AddUser adduser) {

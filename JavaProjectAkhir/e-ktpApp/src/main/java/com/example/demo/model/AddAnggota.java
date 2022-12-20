@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,8 @@ public class AddAnggota {
 	private String jenis_kelamin;
 	private String kepala_keluarga;
 	private String nama;
+	
+	@Column(unique = true)
 	private String nik;
 	private String pendidikan;
 	private String tanggal_lahir;

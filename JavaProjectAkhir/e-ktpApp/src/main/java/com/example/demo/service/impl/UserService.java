@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,20 +22,26 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public List<AddUser> getAllAddUser() {
+	public AddUser login(String email,String password) {
 		// TODO Auto-generated method stub
-		return userRepository.getAllAddUser();
+		return userRepository.login(email, password);
 	}
 
-	@Override
-	public AddUser updateAddUser(int id, AddUser AddUser) {
-		// TODO Auto-generated method stub
-		return userRepository.updateAddUser(id, AddUser);
-	}
-
-	@Override
-	public AddUser deleteAddUser(int id) {
-		// TODO Auto-generated method stub
-		return userRepository.deleteAddUser(id);
-	}
+//	@Override
+//	public List<AddUser> getAllAddUser() {
+//		// TODO Auto-generated method stub
+//		return userRepository.getAllAddUser();
+//	}
+//
+//	@Override
+//	public AddUser updateAddUser(int id, AddUser AddUser) {
+//		// TODO Auto-generated method stub
+//		return userRepository.updateAddUser(id, AddUser);
+//	}
+//
+//	@Override
+//	public AddUser deleteAddUser(int id) {
+//		// TODO Auto-generated method stub
+//		return userRepository.deleteAddUser(id);
+//	}
 }

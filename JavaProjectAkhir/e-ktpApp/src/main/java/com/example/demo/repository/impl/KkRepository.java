@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.model.AddAnggota;
 import com.example.demo.model.AddKk;
 import com.example.demo.repository.IKkRepository;
 
@@ -62,6 +63,13 @@ public class KkRepository implements IKkRepository {
 		// TODO Auto-generated method stub
 		String query = "SELECT * FROM tb_kartu_keluarga WHERE id = ?";
 		return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(AddKk.class), id);
+	}
+
+	@Override
+	public List<AddKk> getAllAddKeluarga(int id) {
+		// TODO Auto-generated method stub
+		String query = "SELECT * FROM tb_anggota_keluarga WHERE id = ?";
+		return jdbcTemplate.query(query, new BeanPropertyRowMapper<>(AddKk.class), id);
 	}
 	
 

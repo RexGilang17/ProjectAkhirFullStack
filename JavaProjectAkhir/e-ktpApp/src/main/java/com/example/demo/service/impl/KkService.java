@@ -44,6 +44,12 @@ public class KkService implements IKkService {
 		// TODO Auto-generated method stub
 		return kkRepository.getKk(id);
 	}
+
+	@Override
+	public AddKk getAllKk(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
